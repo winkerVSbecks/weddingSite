@@ -1,0 +1,202 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Input
+	#Site Styles
+	#Accordian
+	#Animations
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+div.hero .columns {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+header.hero {
+	background: #FFFFF5;
+	color: white;
+	text-align: center;
+	padding: 0;
+	background-image: url(../img/heroBG.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+header.hero h1 {
+	/*margin-top: 40%;*/
+	color: white;
+	font-size: 3em;
+	line-height: 1em;
+	margin-bottom: 1em;
+}
+
+header.hero img {
+	width: 100%;
+}
+
+.alert {
+	display: block;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 15px;
+	font-weight: 700;
+	margin-bottom: 15px; 
+}
+.alert-error {
+	color: #FFB884;
+	border: 2px solid #FFB884;
+}
+.alert-success {
+	color: #ABBF8C;
+	border: 2px solid #ABBF8C;
+}
+
+.required {
+	color: #FFB884;
+}
+
+
+/* #Accordian
+================================================== */
+.accordion {
+	width: 100%;
+	margin: 10px auto 30px auto;
+	text-align: left;
+}
+.accordion h2 {
+	position: relative;
+	z-index: 20;
+	display: block;
+	cursor: pointer;
+	background: #ffffff;
+}
+.accordion h2:hover {
+	background: #fff;
+}
+.accordion input:checked + h2,
+.accordion input:checked + h2:hover {
+	background: #c6e1ec;
+	color: #3d7489;
+}
+.accordion h2:hover:after,
+.accordion input:checked + h2:hover:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: 13px;
+	top: 7px;
+	background: transparent url(../images/arrow_down.png) no-repeat center center;	
+}
+.accordion input:checked + h2:hover:after {
+	background-image: url(../images/arrow_up.png);
+}
+.accordion input {
+	display: none;
+}
+.accordion article {
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: -1px;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+	z-index: 10;
+	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.accordion article p {
+	font-style: italic;
+	color: #777;
+	line-height: 23px;
+	font-size: 14px;
+	padding: 20px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+.accordion input:checked ~ article {
+	-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+.accordion input:checked ~ article.ac-small {
+	height: 140px;
+}
+.accordion input:checked ~ article.ac-medium {
+	height: 180px;
+}
+.accordion input:checked ~ article.ac-large {
+	height: 230px;
+}
+
+
+/* #Animations
+================================================== */
+.animate-show {
+  -webkit-transition:all ease-in-out 0.3s;
+  transition:all ease-in-out 0.3s;
+}
+ 
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display: block !important;
+}
+ 
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/

@@ -1,0 +1,22 @@
+
+<!-- MAIN CONTAINER  -->
+<div class="container">
+
+	<!-- Submit Address -->
+	<div class="sixteen columns add-bottom-extra">
+
+		<h2 class="add-above-extra">
+			Guest Addresses 
+			<hr>
+		</h2>
+
+		<ol>
+			<li ng-repeat="guest in addresses">
+				<strong>{{guest.name}}</strong><br/>
+				{{guest.address}}
+			</li>
+		</ol>
+
+	</div>
+
+</div><!-- END Container -->

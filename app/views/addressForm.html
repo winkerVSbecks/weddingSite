@@ -1,0 +1,21 @@
+<form class="addressForm" ng-submit="submitAddress()" >
+
+	<div class="alert alert-error animate-show" ng-show="addressForm.error">
+		Error: {{addressForm.errMessage}}
+	</div>
+
+	<div class="alert alert-success animate-show" ng-show="addressForm.success">
+		Address submitted. Thank You!
+	</div>
+  
+  <!-- Label and text input -->
+  <label for="name">Name<span class="required">*</span></label>
+  <input class="full-width" ng-model="addressForm.name" type="text" id="name">
+ 
+  <!-- Label and textarea -->
+  <label for="address">Address<span class="required">*</span></label>
+  <textarea class="full-width" ng-model="addressForm.address" id="address"></textarea>
+ 
+  <button class="full-width" type="submit">Submit</button>
+ 
+</form>
