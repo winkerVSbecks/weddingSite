@@ -9,7 +9,6 @@ angular.module('weddingSiteApp')
       link: function postLink(scope, element, attrs) {
 
       	scope.$watch('pageheight', function () {
-			  	// scope.fillPage = { 'height' : scope.pageheight+'px' };
        		skrollr.init({ forceHeight: false });
       	});
       }

@@ -47,6 +47,7 @@
     <script src="bower_components/skrollr/dist/skrollr.min.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="scripts/modernizr.min.js"></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js'></script>
 
         <!-- build:js scripts/modules.js -->
@@ -61,5 +62,17 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/directives/scrollHeader.js"></script>
         <!-- endbuild -->
+
+    <script type="text/javascript">
+      $(window).load(function() {
+        // Replace svg with png for old browsers
+        if(!Modernizr.svg) {
+          $('img[src*="svg"]').attr('src', function() {
+            return $(this).attr('src').replace('.svg', '.png');
+          });
+        }
+      });
+    </script>
+
 </body>
 </html>
