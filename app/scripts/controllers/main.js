@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', function ($scope, $firebase, $timeout, $http) {
+  .controller('MainCtrl', ['$scope', '$firebase', '$timeout', '$http', function ($scope, $firebase, $timeout, $http) {
 
   	// LINK TO FIREBASE
   	var ref = new Firebase('https://vachharjacobson.firebaseio.com');
@@ -38,33 +38,32 @@ angular.module('weddingSiteApp')
   				address: $scope.addressForm.address
   			});
 
-  			// Send as email too
+  			// // Send as email too
+  			// $scope.emailUrl = 'http://api.postmarkapp.com/email';
+  			// $scope.emailHeaders = {
+  			// 	'Access-Control-Allow-Origin' : '*',
+  			// 	'Accept'											: 'application/json',
+  			// 	'Content-Type'								: 'application/json',
+  			// 	'X-Postmark-Server-Token' 		: 'c4c3e195-a208-4a7e-894f-9ef8c6fe27e1'
+  			// };
+  			// $scope.emailData = {
+  			// 	'From': 'varun@winkervsbecks.com', 
+  			// 	'To': 'varunvachhar@gmail.com', 
+  			// 	'Subject': $scope.addressForm.name + 'Address', 
+  			// 	'HtmlBody': '<html><body><strong>'+$scope.addressForm.name+'</strong> <br />'+ $scope.addressForm.address +'</body></html>'
+  			// };
 
-  			$scope.emailUrl = 'http://api.postmarkapp.com/email';
-  			$scope.emailHeaders = {
-  				'Access-Control-Allow-Origin' : '*',
-  				'Accept'											: 'application/json',
-  				'Content-Type'								: 'application/json',
-  				'X-Postmark-Server-Token' 		: 'c4c3e195-a208-4a7e-894f-9ef8c6fe27e1'
-  			};
-  			$scope.emailData = {
-  				'From': 'varun@winkervsbecks.com', 
-  				'To': 'varunvachhar@gmail.com', 
-  				'Subject': $scope.addressForm.name + 'Address', 
-  				'HtmlBody': '<html><body><strong>'+$scope.addressForm.name+'</strong> <br />'+ $scope.addressForm.address +'</body></html>'
-  			};
-
-  			$http({
-  				method: 'POST', 
-  				url: $scope.emailUrl, 
-  				headers: $scope.emailHeaders
-  			})
-	      .success(function(data, status) {
-	        console.log('email sent successfully!');
-	      })
-	      .error(function(data, status) {
-	       console.log(data, status);
-	    	});
+  			// $http({
+  			// 	method: 'POST', 
+  			// 	url: $scope.emailUrl, 
+  			// 	headers: $scope.emailHeaders
+  			// })
+		   //    .success(function(data, status) {
+		   //      console.log('email sent successfully!');
+		   //    })
+		   //    .error(function(data, status) {
+		   //     console.log(data, status);
+		   //  	});
 
   			$timeout(function () {
   				$scope.addressForm.success = false;	
@@ -77,14 +76,4 @@ angular.module('weddingSiteApp')
   	// Get Page Height
   	$scope.pageHeight = $(window).height(); 
 
-  });
-
-
-
-
-// curl -X POST "http://api.postmarkapp.com/email" \
-// -H "Accept: application/json" \
-// -H "Content-Type: application/json" \
-// -H "X-Postmark-Server-Token: c4c3e195-a208-4a7e-894f-9ef8c6fe27e1" \
-// -v \
-// -d "{From: 'varun@winkervsbecks.com', To: 'varunvachhar@gmail.com', Subject: 'Postmark test', HtmlBody: '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'}"
+  }]);
