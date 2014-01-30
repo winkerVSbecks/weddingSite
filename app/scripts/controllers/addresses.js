@@ -45,5 +45,3 @@ angular.module('weddingSiteApp')
 		});
 
   }]);
-
-  // ^2P767gJW%Ad
