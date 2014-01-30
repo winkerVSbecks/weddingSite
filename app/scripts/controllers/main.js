@@ -5,7 +5,6 @@ angular.module('weddingSiteApp')
 
   	// LINK TO FIREBASE
   	var ref = new Firebase('https://vachharjacobson.firebaseio.com');
-    $scope.messages = $firebase(ref);
   	
   	// ADDRESSES
   	$scope.addresses = $firebase(ref);
@@ -36,37 +35,15 @@ angular.module('weddingSiteApp')
   			$scope.addresses.$add({
   				name: $scope.addressForm.name, 
   				address: $scope.addressForm.address
-  			});
-
-  			// // Send as email too
-  			// $scope.emailUrl = 'http://api.postmarkapp.com/email';
-  			// $scope.emailHeaders = {
-  			// 	'Access-Control-Allow-Origin' : '*',
-  			// 	'Accept'											: 'application/json',
-  			// 	'Content-Type'								: 'application/json',
-  			// 	'X-Postmark-Server-Token' 		: 'c4c3e195-a208-4a7e-894f-9ef8c6fe27e1'
-  			// };
-  			// $scope.emailData = {
-  			// 	'From': 'varun@winkervsbecks.com', 
-  			// 	'To': 'varunvachhar@gmail.com', 
-  			// 	'Subject': $scope.addressForm.name + 'Address', 
-  			// 	'HtmlBody': '<html><body><strong>'+$scope.addressForm.name+'</strong> <br />'+ $scope.addressForm.address +'</body></html>'
-  			// };
-
-  			// $http({
-  			// 	method: 'POST', 
-  			// 	url: $scope.emailUrl, 
-  			// 	headers: $scope.emailHeaders
-  			// })
-		   //    .success(function(data, status) {
-		   //      console.log('email sent successfully!');
-		   //    })
-		   //    .error(function(data, status) {
-		   //     console.log(data, status);
-		   //  	});
+  			}, function (data) {
+          // Reset Form
+          $scope.addressForm.name = '';
+          $scope.addressForm.address = '';
+        });
 
   			$timeout(function () {
-  				$scope.addressForm.success = false;	
+  				$scope.addressForm.success = false;
+          $scope.addressForm.error = '';	
   			}, 3000);
 
   		}

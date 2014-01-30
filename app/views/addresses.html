@@ -1,6 +1,6 @@
 
 <!-- MAIN CONTAINER  -->
-<div class="container">
+<div class="container" ng-show="isLoggedIn">
 
 	<!-- Submit Address -->
 	<div class="sixteen columns add-bottom-extra">
@@ -19,4 +19,19 @@
 
 	</div>
 
+	<!-- Log Out -->
+	<button class="full-width add-bottom-extra" type="button" ng-click="logout()">Log Out</button>
+
 </div><!-- END Container -->
+
+
+
+
+
+<div class="container" ng-hide="isLoggedIn">
+
+	<div class="sixteen columns add-above-extra">
+		<a href="#/login" class="button full-width">go to login</a>
+	</div>
+
+</div>

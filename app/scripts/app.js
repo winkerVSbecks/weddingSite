@@ -17,7 +17,11 @@ angular.module('weddingSiteApp', [
       })
       .when('/addresses', {
         templateUrl: 'views/addresses.html',
-        controller: 'MainCtrl'
+        controller: 'AddressesCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .otherwise({
         redirectTo: '/'
