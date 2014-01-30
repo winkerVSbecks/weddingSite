@@ -27,10 +27,10 @@ angular.module('weddingSiteApp')
   	$scope.isAdmin = function (user) {
 
   		return user 
-  					&& user.id === '1' 
+  					&& user.id === '2' 
   					&& user.email === 'varunvachhar@gmail.com'
   					&& user.provider === 'password'
-  					&& user.uid === 'simplelogin:1';
+  					&& user.uid === 'simplelogin:2';
   	};
 
 

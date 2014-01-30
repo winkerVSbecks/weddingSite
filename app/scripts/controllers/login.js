@@ -21,7 +21,7 @@ angular.module('weddingSiteApp')
 		
 			}).then( function (user) {
 
-				if (user && user.id === '1' && user.email === 'varunvachhar@gmail.com')
+				if (user && user.id === '2' && user.email === 'varunvachhar@gmail.com')
 					$location.path('/addresses');
 			
 			}, function (error) {
