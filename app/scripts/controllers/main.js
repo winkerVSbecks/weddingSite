@@ -1,7 +1,16 @@
 'use strict';
 
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', ['$scope', '$firebase', '$timeout', '$http', function ($scope, $firebase, $timeout, $http) {
+  .controller('MainCtrl', ['$scope', '$firebase', '$timeout', '$http', '$location', '$anchorScroll', function ($scope, $firebase, $timeout, $http, $location, $anchorScroll) {
+
+    // COLLAPSE
+    $scope.showAccommodation = false;
+
+    // SCROLL TO SECTIONS
+    $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+    };
 
   	// LINK TO FIREBASE
   	var ref = new Firebase('https://vachharjacobson.firebaseio.com');
@@ -48,9 +57,6 @@ angular.module('weddingSiteApp')
 
   		}
 
-  	};
-
-  	// Get Page Height
-  	$scope.pageHeight = $(window).height(); 
+  	}; 
 
   }]);

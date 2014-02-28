@@ -65,6 +65,27 @@ header.hero img {
 	color: #FFB884;
 }
 
+nav ul {
+	list-style: none;
+	text-align: center;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li:not(:last-child):after {
+	content: ' | ';
+}
+nav ul li a {
+	font-family: "Vollkorn", "Georgia", "Times New Roman", serif;
+	font-style: italic;
+	text-decoration: none;
+	border-bottom: 2px solid #F5DF98; 
+}
+
+.lists > p {
+	font-size: 16px !important;
+	line-height: 20px !important;
+}
 
 /* #Accordian
 ================================================== */
@@ -162,6 +183,15 @@ header.hero img {
 }
 
 
+/* #Google Maps
+================================================== */
+.google-maps {
+	width: 100%;
+	height: 400px;
+}
+
+
+
 /* #Media Queries
 ================================================== */
 
@@ -172,13 +202,21 @@ header.hero img {
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
 	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {}
+	@media only screen and (max-width: 767px) {
+		.lists > p {
+			margin-bottom: 20px !important;
+		}
+	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 479px) {}
+	@media only screen and (max-width: 479px) {
+		nav ul li:not(:last-child):after {
+			content: '';
+		}
+	}
 
 
 /* #Font-Face

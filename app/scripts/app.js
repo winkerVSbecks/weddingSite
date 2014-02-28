@@ -6,13 +6,21 @@ angular.module('weddingSiteApp', [
   'ngAnimate',
   'firebase'
 ])
-  .config(function ($routeProvider, $httpProvider) {
+  .config(function ($routeProvider, $httpProvider, $locationProvider) {
     
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/accommodations', {
+        templateUrl: 'views/accommodation.html',
+        controller: 'MainCtrl'
+      })
+      .when('/fun', {
+        templateUrl: 'views/fun.html',
         controller: 'MainCtrl'
       })
       .when('/addresses', {
@@ -26,4 +34,7 @@ angular.module('weddingSiteApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .controller('ViewCtrl', ['$scope', function ($scope) {
+    $scope.pageHeight = $(window).height();
+  }]);
