@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', ['$scope', '$firebase', '$timeout', '$http', '$location', '$anchorScroll', function ($scope, $firebase, $timeout, $http, $location, $anchorScroll) {
+  .controller('MainCtrl', ['$scope', '$firebase', '$timeout', '$http', '$location', '$anchorScroll', 'thingsToDo', 'foodAndDrink', function ($scope, $firebase, $timeout, $http, $location, $anchorScroll, thingsToDo, foodAndDrink) {
+
+    $scope.thingsToDo = thingsToDo;
+    $scope.foodAndDrink = foodAndDrink;
 
     // COLLAPSE
     $scope.showAccommodation = false;

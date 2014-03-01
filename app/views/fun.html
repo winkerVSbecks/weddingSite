@@ -1,0 +1,33 @@
+<ng-include src="'views/nav.html'"></ng-include>
+
+<!-- MAIN CONTAINER  -->
+<div class="container add-bottom-extra">
+
+<!-- Accommodation and Getting Around -->
+	<div class="sixteen columns add-bottom" id="accommodation">
+
+		<h2>Avr&iuml;l &amp; Varun's Dates <hr></h2>
+
+		<p class="add-bottom-extra">One of the reasons we decided to have our wedding in Toronto is that we’re so excited to share our adopted hometown with you!  These are some of our favourite spots in the city…</p>
+
+		<iframe class="google-maps" src="https://mapsengine.google.com/map/u/0/embed?mid=z1y-KOzQsoOo.kTocIyM72crs" width="960" height="300"></iframe>
+
+	</div>
+
+	<div class="sixteen columns">
+		<h2 class="add-above-extra">THINGS TO DO<hr></h2>
+	</div>
+
+	<article class="lists">
+		<p class="one-third column" ng-repeat="thing in thingsToDo"><strong>{{thing.title}}</strong> <br/>{{thing.desc}}</p>
+	</article>
+
+	<div class="sixteen columns">
+		<h2 class="add-above-extra">FOOD &amp; DRINK<hr></h2>
+	</div>
+
+	<article class="lists">
+		<p class="one-third column" ng-repeat="thing in foodAndDrink"><strong>{{thing.title}}</strong> <br/>{{thing.desc}}</p>
+	</article>
+
+</div><!-- END Container -->
