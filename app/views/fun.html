@@ -14,16 +14,38 @@
 
 	</div>
 
+
+	<!-- THINGS TO DO -->
 	<div class="sixteen columns">
-		<h2 class="add-above-extra">THINGS TO DO<hr></h2>
+		<h2 class="add-above-extra">Things To Do<hr></h2>
 	</div>
 
-	<article class="lists">
+<!-- 	<article class="lists">
 		<p class="one-third column" ng-repeat="thing in thingsToDo"><strong>{{thing.title}}</strong> <br/>{{thing.desc}}</p>
+	</article> -->
+
+	<article class="lists one-third column" ng-repeat="col in thingsToDo">
+		<p class="one-third column" ng-repeat="thing in col"><strong>{{thing.title}}</strong> <br/>{{thing.desc}}</p>
 	</article>
 
+<!-- 	<div ng-repeat="thing in thingsToDo">
+    <span ng-switch on="$index % 3">
+      <span ng-switch-when="0">
+        
+        <article class="lists one-third column">
+        	<p class="one-third column"><strong>{{thingsToDo[$index+0].title}}</strong> <br/>{{thingsToDo[$index+0].desc}}</p>
+        	<p class="one-third column"><strong>{{thingsToDo[$index+1].title}}</strong> <br/>{{thingsToDo[$index+1].desc}}</p>
+        	<p class="one-third column"><strong>{{thingsToDo[$index+2].title}}</strong> <br/>{{thingsToDo[$index+2].desc}}</p>
+        </article>
+      
+      </span>
+    </span>
+  </div> -->
+
+
+	<!-- FOOD & DRINK -->
 	<div class="sixteen columns">
-		<h2 class="add-above-extra">FOOD &amp; DRINK<hr></h2>
+		<h2 class="add-above-extra">Food &amp; Drink<hr></h2>
 	</div>
 
 	<article class="lists">
