@@ -1,0 +1,36 @@
+<ng-include src="'views/nav.html'"></ng-include>
+
+<!-- MAIN CONTAINER  -->
+<div class="container add-bottom-extra">
+
+  <!-- Music Recommendation -->
+  <div class="sixteen columns add-bottom-extra" id="submit-your-address">
+
+    <h2>Music Recommendations <hr></h2>
+
+    <article>
+      <form class="addressForm" ng-submit="submitSong()" >
+        <div class="alert alert-error animate-show" ng-show="songsForm.error">
+          Error: {{songsForm.errMessage}}
+        </div>
+
+        <div class="alert alert-success animate-show" ng-show="songsForm.success">
+          Song submitted. Thank You!
+        </div>
+
+        <!-- Song Title -->
+        <label for="title">Song Title<span class="required">*</span></label>
+        <input class="full-width" ng-model="songsForm.title" type="text" id="title">
+
+        <!-- Artist/Band -->
+        <label for="guestCount">Artist/Band Name<span class="required">*</span></label>
+        <input class="full-width" ng-model="songsForm.band" type="text" id="band">
+
+        <button class="full-width" type="submit">Submit</button>
+
+      </form>
+    </article>
+
+  </div>
+
+</div><!-- END Container -->

@@ -112,7 +112,53 @@ angular.module('weddingSiteApp')
           }, 3000);
 
         }
+      };
 
+
+      // -----------------------------
+      // Songs
+      // -----------------------------
+      var songsRef = new Firebase('https://vachharjacobson.firebaseio.com/songs');
+      $scope.songs = $firebase(songsRef);
+      $scope.songsForm = {
+        error: false,
+        success: false
+      };
+      // Submit the song
+      $scope.submitSong = function() {
+
+        $scope.songsForm.success = false;
+
+        if (!$scope.songsForm.title || $scope.songsForm.title === '') {
+
+          $scope.songsForm.errMessage = 'Title is required.';
+          $scope.songsForm.error = true;
+
+        } else if (!$scope.songsForm.band || $scope.songsForm.band === '') {
+
+          $scope.songsForm.errMessage = 'Artist/band name is required.';
+          $scope.songsForm.error = true;
+
+        } else {
+          $scope.songsForm.error = false;
+          $scope.songsForm.errMessage = '';
+          $scope.songsForm.success = true;
+
+          // Save to firebase
+          $scope.songs.$add({
+            title: $scope.songsForm.title,
+            band: $scope.songsForm.band,
+          }).then(function(data) {
+            // Reset Form
+            $scope.songsForm.title = '';
+            $scope.songsForm.band = '';
+          });
+
+          $timeout(function() {
+            $scope.songsForm.success = false;
+            $scope.songsForm.error = '';
+          }, 3000);
+        }
       };
 
     }
