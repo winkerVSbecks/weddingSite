@@ -1,0 +1,25 @@
+<form class="addressForm" ng-submit="submitRsvp()" >
+
+	<div class="alert alert-error animate-show" ng-show="rsvpForm.error">
+		Error: {{rsvpForm.errMessage}}
+	</div>
+
+	<div class="alert alert-success animate-show" ng-show="rsvpForm.success">
+		RSVP submitted. Thank You!
+	</div>
+
+  <!-- Name -->
+  <label for="name">Name<span class="required">*</span></label>
+  <input class="full-width" ng-model="rsvpForm.name" type="text" id="name">
+
+  <!-- No. Of Guests -->
+  <label for="guestCount">No. Of Guests<span class="required">*</span></label>
+  <input class="full-width" ng-model="rsvpForm.guestCount" type="text" id="guestCount">
+
+  <!-- Notes -->
+  <label for="note">Note</label>
+  <textarea class="full-width" ng-model="rsvpForm.note" id="note"></textarea>
+
+  <button class="full-width" type="submit">Submit</button>
+
+</form>
