@@ -35,6 +35,10 @@ angular.module('weddingSiteApp', [
         templateUrl: 'views/songs.html',
         controller: 'MainCtrl'
       })
+      .when('/registry', {
+        templateUrl: 'views/registry.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
