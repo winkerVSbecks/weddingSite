@@ -6,7 +6,7 @@
   <!-- Music Recommendation -->
   <div class="sixteen columns add-bottom-extra" id="submit-your-address">
 
-    <h2>Music Recommendations <hr></h2>
+    <h2>Song Requests <hr></h2>
 
     <p class="add-bottom">Have a favourite song that you can't resist dancing to? Let us know!</p>
 
@@ -27,6 +27,10 @@
         <!-- Artist/Band -->
         <label for="guestCount">Artist/Band Name<span class="required">*</span></label>
         <input class="full-width" ng-model="songsForm.band" type="text" id="band">
+
+        <!-- NOTE -->
+        <label for="guestCount">Note</label>
+        <input class="full-width" ng-model="songsForm.note" type="text" id="note">
 
         <button class="full-width" type="submit">Submit</button>
 

@@ -18,6 +18,11 @@
 
 /* #Site Styles
 ================================================== */
+sup {
+  vertical-align: super !important;
+  font-size: smaller !important;
+}
+
 a.button {
   color: #fff;
   font-style: normal;

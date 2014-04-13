@@ -148,10 +148,12 @@ angular.module('weddingSiteApp')
           $scope.songs.$add({
             title: $scope.songsForm.title,
             band: $scope.songsForm.band,
+            note: $scope.songsForm.note,
           }).then(function(data) {
             // Reset Form
             $scope.songsForm.title = '';
             $scope.songsForm.band = '';
+            $scope.songsForm.note = '';
           });
 
           $timeout(function() {
