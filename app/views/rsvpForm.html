@@ -13,8 +13,16 @@
   <input class="full-width" ng-model="rsvpForm.name" type="text" id="name">
 
   <!-- No. Of Guests -->
-  <label for="guestCount">No. Of Guests<span class="required">*</span></label>
+  <label for="guestCount">Number Of Guests Attending<span class="required">*</span></label>
   <input class="full-width" ng-model="rsvpForm.guestCount" type="text" id="guestCount">
+
+  <!-- Names -->
+  <label for="guestNames">Names of Guests Attending<span class="required">*</span></label>
+  <input class="full-width" ng-model="rsvpForm.guestNames" type="text" id="guestNames">
+
+  <!-- Allergies -->
+  <label for="guestAllergies">Does anyone in your party have any food allergies?</label>
+  <input class="full-width" ng-model="rsvpForm.guestAllergies" type="text" id="guestAllergies">
 
   <!-- Notes -->
   <label for="note">Note</label>

@@ -40,6 +40,11 @@ angular.module('weddingSiteApp')
           $scope.rsvpForm.errMessage = 'Guest count is required.';
           $scope.rsvpForm.error = true;
 
+        } else if (!$scope.rsvpForm.guestNames || $scope.rsvpForm.guestNames === '') {
+
+          $scope.rsvpForm.errMessage = 'Guest names are required.';
+          $scope.rsvpForm.error = true;
+
         } else {
           $scope.rsvpForm.error = false;
           $scope.rsvpForm.errMessage = '';
@@ -49,12 +54,16 @@ angular.module('weddingSiteApp')
           $scope.rsvp.$add({
             name: $scope.rsvpForm.name,
             guestCount: $scope.rsvpForm.guestCount,
+            guestNames: $scope.rsvpForm.guestNames,
+            guestAllergies: $scope.rsvpForm.guestAllergies,
             note: $scope.rsvpForm.note
           }).then(function(data) {
             // Reset Form
             $scope.rsvpForm.name = '';
-            $scope.rsvpForm.note = '';
             $scope.rsvpForm.guestCount = '';
+            $scope.rsvpForm.guestNames = '';
+            scope.rsvpForm.guestAllergies = '';
+            $scope.rsvpForm.note = '';
           });
 
           $timeout(function() {
